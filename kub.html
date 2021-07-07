@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Integration</title>
+        <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+        <div id='heading'>
+                <img src="kub.png" alt="">
+        </div>
+        <div class="title">
+                <h1>Enter Commands</h1>
+        </div>
+        <div id="input">
+                <p>
+                 [root@localhost~]:<input type="Text" id="i1"/>
+                </p>
+		<button onclick="f1();">Run Command</button>
+        </div>
+        <div id="output">
+                <h2>Output </h2>
+        </div>
+        <pre>	<div id="d1">.<br><br><br><br><br><br> <br><br><br> </div> </pre>
+
+
+        <!-- Java Script -->
+        <script>
+               function f1(){
+
+        var i = document.getElementById("id1").value
+        //this is not a function it is a one class
+        var x1= new XMLHttpRequest();
+        x1.open("GET","http://13.126.100.152/cgi-bin/doc-cgi.py?x=" + i , true);
+        x1.send();
+        x1.onload=function(){
+        var output = x1.responseText;
+        document.getElementById("d1").innerHTML = output;
+    }
+    }
+        </script>
+</body>
